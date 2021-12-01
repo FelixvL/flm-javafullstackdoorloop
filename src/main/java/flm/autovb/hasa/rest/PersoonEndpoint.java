@@ -44,7 +44,7 @@ public class PersoonEndpoint {
 		System.out.println("test:" + tekst+andere+eenvar);
 		ps.slaPersoonOp();
 	}
-	@PostMapping("/test2")
+	@PostMapping("/test3")
 	public void testPostMethode(@RequestBody Persoon persoon) {
 		System.out.println(persoon.getAchternaam());
 		ps.slaDezePersoonOp(persoon);
