@@ -14,6 +14,9 @@ public class PersoonService {
 	@Autowired 
 	private AutoRepository ar;
 	
+	public Iterable<Persoon> geefAlles(){
+		return pr.hoi();
+	}
 	
 	public void slaPersoonOp() {
 		pr.save(new Persoon());

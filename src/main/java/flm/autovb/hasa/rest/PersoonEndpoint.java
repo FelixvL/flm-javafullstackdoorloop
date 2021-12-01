@@ -18,7 +18,11 @@ public class PersoonEndpoint {
 	private PersoonService ps;
 	
 	
-	//persoon nieuw auto nieuw
+	@GetMapping("alles")
+	public Iterable<Persoon> alles(){
+		return ps.geefAlles();
+	}
+	
 	@GetMapping("toevoegennieuwnieuw/{voornaam}/{merk}")
 	public void slaAutoEnPersoonOp(@PathVariable String voornaam, @PathVariable String merk) {
 		Persoon persoon = new Persoon();
@@ -27,23 +31,13 @@ public class PersoonEndpoint {
 		auto.setMerk(merk);
 		ps.slaDezePersoonEnAutoOp(persoon, auto);
 	}
-	
-	//persoon db  auto nieuw
-	
-	//persoon db  auto db
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@GetMapping("/test/{tekst}/{andere}")
 	public void testmethode(@PathVariable String tekst,@PathVariable String andere, @RequestParam int eenvar) {
 		System.out.println("test:" + tekst+andere+eenvar);
 		ps.slaPersoonOp();
 	}
+	
 	@PostMapping("/test3")
 	public void testPostMethode(@RequestBody Persoon persoon) {
 		System.out.println(persoon.getAchternaam());
