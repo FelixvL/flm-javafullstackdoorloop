@@ -14,7 +14,7 @@ public class PersoonService {
 	@Autowired 
 	private AutoRepository ar;
 	
-	public Iterable<Persoon> geefAlles(){
+	public Iterable<Persoon> eigenMethode() {
 		return pr.hoi();
 	}
 	

@@ -20,7 +20,8 @@ public class PersoonEndpoint {
 	
 	@GetMapping("alles")
 	public Iterable<Persoon> alles(){
-		return ps.geefAlles();
+		System.out.println("test");
+		return ps.eigenMethode();
 	}
 	
 	@GetMapping("toevoegennieuwnieuw/{voornaam}/{merk}")
