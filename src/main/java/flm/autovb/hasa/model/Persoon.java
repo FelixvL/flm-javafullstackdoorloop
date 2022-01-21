@@ -7,9 +7,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+//  json naam van de getters en setters
+//  eenrichtingrelatie voor relatie oneToOne
+//        andere kant   GEEN verschil
+//   een richtingrelatie voor oneToMany
+		// wel verschil koppeltabel
+
+// Een object aan een ander object toevoegen via een post op het endpoint
+
+
+// twee nieuwe objecten
+// 1 bestaand object en 1 nieuwe
+// 1 bestaand object en 1 bestaand object
+
+
 
 @Entity
 public class Persoon {
@@ -21,7 +37,22 @@ public class Persoon {
 	private String achternaam;
 	private LocalDate geboortedatum;
 	
-	@OneToOne
+	@ManyToMany
+	private List<Huis> huis;
+	
+	
+	
+	
+	
+	
+	
+	public List<Huis> getHuis() {
+		return huis;
+	}
+	public void setHuis(List<Huis> huis) {
+		this.huis = huis;
+	}
+	@ManyToOne
 	private Auto wagen;
 	
 	
